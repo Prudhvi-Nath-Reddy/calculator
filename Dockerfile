@@ -1,4 +1,5 @@
-FROM ubuntu:latest
+FROM openjdk:11
 LABEL authors="prudhveee"
-
-ENTRYPOINT ["top", "-b"]
+COPY ./target/Calculator-1.0-SNAPSHOT-jar-with-dependencies.jar ./
+WORKDIR ./
+CMD ["java","-cp","calculator-1.0-SNAPSHOT-jar-with-dependencies.jar","org.example.Main"]

@@ -1,0 +1,16 @@
+---
+- name : Pull Docker Image of calculator
+  host : all
+  vars :
+    ansible_python_interpreter: /usr/bin/python3
+  tasks :
+    - name : Pull Image
+      docker_Image :
+        name : prudhveee/calculator:latest
+        source: pull
+    - name : start docker service
+      service:
+        name: docker
+        state: started
+    - name: running container
+      shell : docker run -it -d --name calculator prudhveee/calculator
