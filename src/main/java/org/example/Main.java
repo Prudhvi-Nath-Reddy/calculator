@@ -1,19 +1,91 @@
 package org.example;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger ;
+import java.util.Scanner;
+
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
+    private static final Logger logger =  LogManager.getLogger(Main.class);
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Simple Calculator");
+        logger.info("Started");
+        while (true) {
+            displayMenu();
+            int choice = scanner.nextInt();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+            if (choice == 5) {
+                System.out.println("Goodbye!");
+                break;
+            }
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+            if (choice < 1 || choice > 5) {
+                System.out.println("Invalid choice. Please choose a valid option.");
+                continue;
+            }
+
+            System.out.print("Enter the first number: ");
+            double num1 = scanner.nextDouble();
+
+            System.out.print("Enter the second number: ");
+            double num2 = scanner.nextDouble();
+
+            double result = 0;
+
+            switch (choice) {
+                case 1:
+                    result = add(num1, num2);
+                    break;
+                case 2:
+                    result = subtract(num1, num2);
+                    break;
+                case 3:
+                    result = multiply(num1, num2);
+                    break;
+                case 4:
+                    result = divide(num1, num2);
+                    break;
+            }
+
+            System.out.println("Result: " + result);
+        }
+    }
+
+    public static void displayMenu() {
+        System.out.println("Menu:");
+        System.out.println("1. Addition (+)");
+        System.out.println("2. Subtraction (-)");
+        System.out.println("3. Multiplication (*)");
+        System.out.println("4. Division (/)");
+        System.out.println("5. Exit");
+        System.out.print("Enter your choice (1-5): ");
+    }
+
+    public static double add(double num1, double num2) {
+        return num1 + num2;
+    }
+
+    public static double subtract(double num1, double num2) {
+        return num1 - num2;
+    }
+
+    public static double multiply(double num1, double num2) {
+        return num1 * num2;
+    }
+
+    public static double divide(double num1, double num2) {
+        if (num2 != 0) {
+            return num1 / num2;
+        } else {
+            System.out.println("Error: Division by zero");
+            logger.warn("Innvalid info");
+            return 0;
         }
     }
 }
+
+
+
+
