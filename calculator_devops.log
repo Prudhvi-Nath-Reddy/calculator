@@ -6,3 +6,11 @@
 2023-10-28 19:24:24.143[main] INFO  org.example.Main - Start of Execution
 2023-10-28 19:25:44.944[main] INFO  org.example.Main - Start of Execution
 2023-10-29 05:20:54.405[main] INFO  org.example.Main - Started
+2023-10-29 06:46:26.813[main] INFO  org.example.Main - Started
+2023-10-29 06:46:33.513[main] INFO  org.example.Main - add completed
+2023-10-29 06:46:38.580[main] INFO  org.example.Main - subtract completed
+2023-10-29 06:46:41.227[main] INFO  org.example.Main - multiply completed
+2023-10-29 06:46:46.762[main] INFO  org.example.Main - divide completed
+2023-10-29 06:46:51.295[main] WARN  org.example.Main - Division by 0 error
+2023-10-29 06:46:51.296[main] INFO  org.example.Main - divide completed
+2023-10-29 06:46:53.199[main] INFO  org.example.Main - Byee Execution over

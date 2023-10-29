@@ -18,6 +18,7 @@ public class Main {
 
             if (choice == 5) {
                 System.out.println("Goodbye!");
+                logger.info("Byee Execution over");
                 break;
             }
 
@@ -37,15 +38,19 @@ public class Main {
             switch (choice) {
                 case 1:
                     result = add(num1, num2);
+                    logger.info("add completed");
                     break;
                 case 2:
                     result = subtract(num1, num2);
+                    logger.info("subtract completed");
                     break;
                 case 3:
                     result = multiply(num1, num2);
+                    logger.info("multiply completed");
                     break;
                 case 4:
                     result = divide(num1, num2);
+                    logger.info("divide completed");
                     break;
             }
 
@@ -80,7 +85,7 @@ public class Main {
             return num1 / num2;
         } else {
             System.out.println("Error: Division by zero");
-            logger.warn("Innvalid info");
+            logger.warn("Division by 0 error");
             return 0;
         }
     }
