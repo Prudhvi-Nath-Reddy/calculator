@@ -21,20 +21,15 @@ public class Main {
                 logger.info("Byee Execution over");
                 break;
             }
-
             if (choice < 1 || choice > 5) {
                 System.out.println("Invalid choice. Please choose a valid option.");
                 continue;
             }
-
             System.out.print("Enter the first number: ");
             double num1 = scanner.nextDouble();
-
             System.out.print("Enter the second number: ");
             double num2 = scanner.nextDouble();
-
             double result = 0;
-
             switch (choice) {
                 case 1:
                     result = add(num1, num2);
